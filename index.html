@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/dd4c0b73a5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>   
+            <img src="images/logo.png" alt="logo">
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#project">Project</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa-solid fa-times" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Backend Developer</p>
+            <h1>Hi, I'm Minh <span>Tuan</span><br> from VietNam</h1>
+        </div>
+    </div>
+</div>
+<!-- -----------------about---------------- -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/user.png" alt="">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p >During my final year as an Electronics and Telecommunications student, I discovered a strong interest in backend development, particularly in JavaScript and frameworks like Node.js. While researching current technology trends, I became increasingly drawn to the possibilities of backend systems. My technical background has sharpened my problem-solving abilities and provided me with a solid understanding of systems and networks. With a growing enthusiasm for a career in software engineering, I am eager to focus on backend development and am actively seeking an internship to further develop my skills and contribute to impactful projects.</p>
+                <div class="tab_titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                    
+                </div>
+                <div class="tab-contents  active-tab" id = "skills">
+                    <ul>
+                        <li><span>HTML/CSS</span><br>Understanding of HTML/CSS for API integration and communication with frontend.</li>
+                        <li><span>JavaScript</span><br>Proficient in JavaScript for backend development using Node.js</li>
+                        <li><span>C# C++</span><br>Understanding of C# and C++ with a focus on backend principles.</li>
+                        <li><span>Cloud Services/Deployment</span><br>Basic knowledge of cloud platforms like AWS or Heroku.</li>
+                    </ul>
+                </div>
+                <div class="tab-contents " id ="education">
+                    <ul>
+                        <li><span>09/2021-2025</span><br>Ho Chi Minh City University of Science</li>
+                        <li><span>GPA</span><br>7.02/10</li>
+                    </ul>
+                </div>                   
+            </div>               
+        </div>
+    </div>
+</div>
+<!-- ---------------project----------------  -->
+ <div id="project">
+    <div class="container">
+        <h1 class="sub-title">My Projects</h1>
+        <div class="project-list">
+            <div>
+                <i class="fa-solid fa-cloud"></i>
+                <h2>Weather App</h2>
+                <p>A web application that provides real-time weather information for any city using data from the OpenWeatherMap API.</p>
+                <a href="https://minhtuan0647.github.io/Weather-app/">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-music"></i>
+                <h2>Web The Band</h2>
+                <p>A responsive website built to showcase a fictional music band, "The Band". The website includes multiple sections such as band information, albums, tour dates, and a contact form. The project focuses on providing an intuitive interface that highlights the band's activities, media content, and interactive elements for user engagement.</p>
+                <a href="https://minhtuan0647.github.io/F8-The-Band/">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-right-to-bracket"></i>
+                <h2>Login Page</h2>
+                <p>This project serves as the backend for a login page built with Node.js, focusing on user authentication and data management. It supports social login through Google and Facebook, as well as email registration and verification.</p>
+                <a href="https://github.com/Minhtuan0647/Login_page">Learn more</a>
+            </div>
+        </div>
+    </div>
+ </div>
+<!-- ------------contact------------ -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>minhtuan0647@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i>0388308952</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/minhtuan0647"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/dngmtuan/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/tu%E1%BA%A5n-d%C6%B0%C6%A1ng-minh-271101277/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://x.com/TunDngMinh69652"><i class="fa-brands fa-twitter-square"></i></a>
+                </div>
+                <a href="images/CV_DuongMinhTuan_BackendDeveloper.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+              
+                <form name="submit-to-google-sheet">
+                    <input name="email" type="email" placeholder="Email" required>
+                    <input name="firstName" type="text" placeholder="First Name">
+                    <input name="lastName" type="text" placeholder="Last Name">
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class = "btn btn2">Send</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablinks of tablinks){
+            tablinks.classList.remove("active-link")
+        }
+        for(tabcontents of tabcontents){
+            tabcontents.classList.remove("active-tab")
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwowsK6u2Q-zxe6ECNz4k1XVRmZ7KLVABTZssbP97b3/dev'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+</script>
+</body>
+</html>
